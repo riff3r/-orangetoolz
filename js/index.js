@@ -1,4 +1,4 @@
-// Active Card
+// Credit Card
 
 const cards = document.querySelector(".cards");
 const card = document.querySelectorAll(".cards .card");
@@ -6,7 +6,6 @@ const card = document.querySelectorAll(".cards .card");
 const activeCardHandler = (event) => {
   const clicked = event.target.closest(".card");
   if (!clicked.children) return;
-  console.log(clicked.children);
 
   document
     .querySelectorAll(".card")

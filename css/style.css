@@ -130,30 +130,6 @@ li {
   margin: auto;
 }
 
-.grid {
-  display: grid;
-  gap: 6.4rem;
-}
-
-.grid:not(:last-child) {
-  margin-bottom: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
-}
-.grid--center-v {
-  align-items: center;
-}
-
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -181,10 +157,6 @@ li {
   color: var(--clr-text-danger);
   background-color: var(--clr-danger-bg);
 }
-
-/* .btn.btn-logout img {
-  display: inline-block;
-} */
 
 /* Toggle Checkbox */
 input[type="checkbox"].toggle {
@@ -250,7 +222,6 @@ input[type="checkbox"].toggle:checked + label {
 #menu {
   background-color: var(--clr-bg-dark);
   width: 22.4rem;
-  /* align-items: stretch; */
 }
 
 #menu .logo {
@@ -606,6 +577,10 @@ input[type="checkbox"].toggle:checked + label {
   padding: 2rem;
 }
 
+.setting-content h1 {
+  margin-bottom: 2rem;
+}
+
 .general-notification {
   margin-bottom: 3.2rem;
   border-bottom: 1px solid var(--clr-border-primary);
@@ -622,8 +597,8 @@ input[type="checkbox"].toggle:checked + label {
 .email-info {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   gap: 3rem;
+
   margin-bottom: 3rem;
   padding-inline-start: 7rem;
   padding-bottom: 3rem;
@@ -674,7 +649,6 @@ input[type="checkbox"].toggle:checked + label {
     transform: translateX(-224px);
     transition: all 0.3s ease-in-out;
   }
-
   #menu.active {
     position: fixed;
     height: 100%;
@@ -682,7 +656,6 @@ input[type="checkbox"].toggle:checked + label {
     margin-left: 0;
     transform: translateX(0);
   }
-
   #menu .logo .close {
     display: block;
   }
@@ -690,39 +663,32 @@ input[type="checkbox"].toggle:checked + label {
     width: 100%;
     display: inline-block;
   }
-
   .nav-icon {
     display: block;
     z-index: 888;
   }
-
   .user {
     flex-grow: 1;
   }
   .user-section {
     flex-wrap: wrap;
   }
-
   .user-section .user {
     min-width: auto;
   }
-
   #interface .navigation .balance-text {
     font-size: 1.4rem;
   }
-
   #interface .navigation .balance-text .balance-int {
     color: var(--clr-bg-primary);
     font-weight: 500;
     font-size: 1.6rem;
   }
-
   .navigation__info {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-
   .setting-header--items {
     justify-content: flex-start;
     overflow-x: auto;
