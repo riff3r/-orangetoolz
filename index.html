@@ -20,7 +20,7 @@
           <img class="close" src="images/menu/close.png" alt="close" />
         </div>
 
-        <!-- Menu Item -->
+        <!-- Side Menu Item -->
         <ul class="items">
           <li class="item">
             <a href="#">
@@ -96,6 +96,7 @@
 
       <!-- Main -->
       <div id="interface">
+        <!-- Top Navigation -->
         <nav class="navigation">
           <img class="nav-icon" src="images/navigation/main-menu.png" alt="" />
 
@@ -132,6 +133,7 @@
           </div>
         </nav>
 
+        <!-- Main Content -->
         <div class="main-content">
           <div class="user-section">
             <section class="user">
@@ -189,17 +191,35 @@
           </div>
 
           <div class="user-settings">
+            <!-- Tab section -->
             <div class="setting-header">
               <ul class="setting-header--items">
-                <li>Update Profile</li>
-                <li>Change Password</li>
-                <li class="active">Email Notifications</li>
-                <li>Auto Recharge Settings</li>
+                <li class="setting-header--tab" data-tab="1">Update Profile</li>
+                <li class="setting-header--tab" data-tab="2">
+                  Change Password
+                </li>
+                <li data-tab="3" class="setting-header--tab active">
+                  Email Notifications
+                </li>
+                <li class="setting-header--tab" data-tab="4">
+                  Auto Recharge Settings
+                </li>
               </ul>
             </div>
 
+            <!-- Tab Content -->
             <div class="setting-content">
-              <div class="email-notification">
+              <div class="tab-content setting-content--1">
+                <h1>Update Profile</h1>
+              </div>
+
+              <div class="tab-content setting-content--2">
+                <h1>Change your Password</h1>
+              </div>
+
+              <div
+                class="tab-content email-notification setting-content--3 active"
+              >
                 <div class="general-notification">
                   <div>
                     <input type="checkbox" id="check" class="toggle" checked />
@@ -243,6 +263,10 @@
 
                   <button class="btn btn-save">Save Changes</button>
                 </div>
+              </div>
+
+              <div class="tab-content setting-content--4">
+                <h1>Auto Recharge</h1>
               </div>
             </div>
           </div>

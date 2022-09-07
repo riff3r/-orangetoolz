@@ -526,6 +526,7 @@ input[type="checkbox"].toggle:checked + label {
   border: 1px solid var(--clr-border-primary);
   border-radius: 10px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .credit-cards .cards .card.active {
@@ -580,6 +581,7 @@ input[type="checkbox"].toggle:checked + label {
 
 .setting-header--items li {
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 .setting-header--items .active {
@@ -588,6 +590,14 @@ input[type="checkbox"].toggle:checked + label {
 }
 
 /* Setting Content */
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
 
 .setting-content {
   width: 100%;

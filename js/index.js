@@ -3,6 +3,7 @@
 const mainMenu = document.querySelector("#menu");
 const closeMenu = document.querySelector(".close");
 const menu = document.querySelectorAll(".item a");
+const card = document.querySelectorAll(".card");
 const dropdownButton = document.querySelector(".dropdown-button");
 
 const openMenu = document.querySelector(".nav-icon");
@@ -45,3 +46,43 @@ const toggleMenuHandler = () => {
 openMenu.addEventListener("click", toggleMenuHandler);
 
 closeMenu.addEventListener("click", toggleMenuHandler);
+
+// Active Card
+
+const activeCardHandler = (event) => {
+  console.log(event.target);
+};
+
+card.forEach((item) => item.addEventListener("click", activeCardHandler));
+
+// Tabs
+const tabs = document.querySelectorAll(".setting-header--tab");
+
+const tabsContainer = document.querySelector(".setting-header--items");
+
+const tabsContent = document.querySelectorAll(".tab-content");
+
+const tabHandler = (e) => {
+  const clicked = e.target;
+
+  const invalidUlClick = clicked.classList.contains("setting-header--items");
+
+  if (!invalidUlClick) {
+    // Remove all class
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    // Add active class
+    clicked.classList.add("active");
+
+    // Remove Active tag
+    document
+      .querySelectorAll(".tab-content")
+      .forEach((tab) => tab.classList.remove("active"));
+
+    // Active Content Area
+    document
+      .querySelector(`.setting-content--${clicked.dataset.tab}`)
+      .classList.add("active");
+  }
+};
+
+tabsContainer.addEventListener("click", tabHandler);
