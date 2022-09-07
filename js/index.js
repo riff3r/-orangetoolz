@@ -1,65 +1,28 @@
-// Selector
-
-const mainMenu = document.querySelector("#menu");
-const closeMenu = document.querySelector(".close");
-const menu = document.querySelectorAll(".item a");
-const card = document.querySelectorAll(".card");
-const dropdownButton = document.querySelector(".dropdown-button");
-
-const openMenu = document.querySelector(".nav-icon");
-
-// Menu Drop down
-const submenuHandler = (event) => {
-  let parent = event.target.closest(".menu-dropdown");
-  parent.classList.toggle("open");
-};
-
-dropdownButton.addEventListener("click", submenuHandler);
-
-// Active menu
-function handleActiveItem() {
-  const existingImage = this.children[0].getAttribute("alt");
-
-  menu.forEach((item) => {
-    // Active Class
-    item.classList.remove("active");
-    this.classList.add("active");
-
-    // Active image change
-    this.children[0].src = `images/menu/${existingImage}-active.png`;
-
-    if (!item.classList.contains("active")) {
-      let prevImage = item.children[0].getAttribute("alt");
-
-      item.children[0].src = `images/menu/${prevImage}.png`;
-    }
-  });
-}
-
-menu.forEach((item) => item.addEventListener("click", handleActiveItem));
-
-// Responsive toggle
-const toggleMenuHandler = () => {
-  mainMenu.classList.toggle("active");
-};
-
-openMenu.addEventListener("click", toggleMenuHandler);
-
-closeMenu.addEventListener("click", toggleMenuHandler);
-
 // Active Card
 
+const cards = document.querySelector(".cards");
+const card = document.querySelectorAll(".cards .card");
+
 const activeCardHandler = (event) => {
-  console.log(event.target);
+  const clicked = event.target.closest(".card");
+  if (!clicked.children) return;
+  console.log(clicked.children);
+
+  document
+    .querySelectorAll(".card")
+    .forEach((tab) => tab.classList.remove("active"));
+  clicked.classList.add("active");
+
+  card.forEach((item) => (item.children[2].src = "images/content/remove.png"));
+
+  clicked.children[2].src = "images/content/remove-active.png";
 };
 
-card.forEach((item) => item.addEventListener("click", activeCardHandler));
+cards.addEventListener("click", activeCardHandler);
 
 // Tabs
 const tabs = document.querySelectorAll(".setting-header--tab");
-
 const tabsContainer = document.querySelector(".setting-header--items");
-
 const tabsContent = document.querySelectorAll(".tab-content");
 
 const tabHandler = (e) => {
@@ -86,3 +49,49 @@ const tabHandler = (e) => {
 };
 
 tabsContainer.addEventListener("click", tabHandler);
+
+// Menu Drop down
+const dropdownButton = document.querySelector(".dropdown-button");
+const submenuHandler = (event) => {
+  let parent = event.target.closest(".menu-dropdown");
+  parent.classList.toggle("open");
+};
+
+dropdownButton.addEventListener("click", submenuHandler);
+
+// Active menu
+const menu = document.querySelectorAll(".item a");
+
+function handleActiveItem() {
+  const existingImage = this.children[0].getAttribute("alt");
+
+  menu.forEach((item) => {
+    // Active Class
+    item.classList.remove("active");
+    this.classList.add("active");
+
+    // Active image change
+    this.children[0].src = `images/menu/${existingImage}-active.png`;
+
+    if (!item.classList.contains("active")) {
+      let prevImage = item.children[0].getAttribute("alt");
+
+      item.children[0].src = `images/menu/${prevImage}.png`;
+    }
+  });
+}
+
+menu.forEach((item) => item.addEventListener("click", handleActiveItem));
+
+// Responsive toggle
+const mainMenu = document.querySelector("#menu");
+const openMenu = document.querySelector(".nav-icon");
+const closeMenu = document.querySelector(".close");
+
+const toggleMenuHandler = () => {
+  mainMenu.classList.toggle("active");
+};
+
+openMenu.addEventListener("click", toggleMenuHandler);
+
+closeMenu.addEventListener("click", toggleMenuHandler);
